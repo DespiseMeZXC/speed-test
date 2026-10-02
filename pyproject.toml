@@ -21,3 +21,6 @@ speed-meter = "speed_meter:main"
 
 [tool.setuptools]
 py-modules = ["speed_meter"]
+
+[tool.uv]
+package = true
