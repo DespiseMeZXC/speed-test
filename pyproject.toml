@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "internet-speed-meter-cli"
+version = "1.0.0"
+description = "A dependency-free CLI for measuring sequential download speed"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [{ name = "Codex" }]
+classifiers = [
+    "Environment :: Console",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+]
+
+[project.scripts]
+speed-meter = "speed_meter:main"
+
+[tool.setuptools]
+py-modules = ["speed_meter"]
