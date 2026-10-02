@@ -11,17 +11,26 @@
 
 Сторонние библиотеки не нужны — достаточно Python 3.9 или новее.
 
-## Установка CLI-команды
+## Установка uv
 
-Из папки репозитория выполните:
+Проект использует [uv](https://docs.astral.sh/uv/). Если `uv` ещё не установлен,
+воспользуйтесь официальной инструкцией для вашей системы, затем из папки
+репозитория выполните:
 
 ```bash
-python -m pip install .
+uv sync
 ```
 
-После этого команда доступна из любого каталога:
+## Запуск через uv
 
 ```bash
+uv run speed-meter "https://example.com/large-image.jpg"
+```
+
+Чтобы установить команду глобально и запускать её из любого каталога:
+
+```bash
+uv tool install .
 speed-meter "https://example.com/large-image.jpg"
 ```
 
@@ -50,6 +59,15 @@ python speed_meter.py "https://example.com/large-file.bin" --requests 10 --timeo
 speed-meter --help
 speed-meter --version
 ```
+
+## Тесты
+
+```bash
+uv run python -m unittest discover -s tests -v
+```
+
+Тесты проверяют подсчёт полученных байтов, времени и итоговой статистики за 10
+последовательных запросов. Сетевой доступ для тестов не требуется.
 
 ## Пример вывода
 
