@@ -18,9 +18,10 @@ classifiers = [
 
 [project.scripts]
 speed-meter = "speed_meter:main"
+speed-meter-async = "async_speed_meter:main"
 
 [tool.setuptools]
-py-modules = ["speed_meter"]
+py-modules = ["speed_meter", "async_speed_meter"]
 
 [tool.uv]
 package = true
